@@ -12,57 +12,73 @@
       margin: 0;
       padding: 0;
       text-align: center;
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
+      color: #333;
     }
 
     .color-box {
-      background-color: lightgoldenrodyellow;
-      padding: 15px;
+      background-color: rgba(255, 255, 224, 0.9); /* lightgoldenrodyellow with opacity */
+      padding: 20px;
       display: inline-block;
-      border-radius: 10px;
+      border-radius: 15px;
       font-size: 4vw;
-      margin-top: 20px;
+      margin-top: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
     h1, h2 {
       font-size: 4vw;
-      margin: 15px 0;
+      margin: 20px 0;
+      color: #2c3e50;
     }
 
     a {
-      color: blue;
+      color: #3498db;
       text-decoration: none;
       font-weight: bold;
       font-size: 3.5vw;
       display: block;
-      margin: 10px 0;
+      margin: 15px 0;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #2980b9;
     }
 
     .contact-info p {
       font-size: 3.5vw;
-      margin: 5px 0;
+      margin: 10px 0;
+      color: #34495e;
     }
 
     .image-container img {
       width: 90%;
       max-width: 450px;
       height: auto;
-      border-radius: 10px;
-      margin: 15px 0;
+      border-radius: 15px;
+      margin: 20px 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
     hr {
       width: 85%;
-      border-top: 2px solid black;
+      border-top: 2px solid #34495e;
+      margin: 30px auto;
     }
 
     @media screen and (max-width: 600px) {
       h1, h2 {
-        font-size: 5vw;
+        font-size: 6vw;
       }
 
       .contact-info p, a {
-        font-size: 4vw;
+        font-size: 5vw;
+      }
+
+      .color-box {
+        padding: 15px;
+        font-size: 6vw;
       }
     }
   </style>
@@ -70,10 +86,10 @@
 <body>
 
   <div class="color-box">
-    <h1>WELCOME TO JAIMIN PARMAR WEBSITE</h1>
+    <h1>WELCOME TO JAIMIN PARMAR'S WEBSITE</h1>
   </div>
 
-  <h2>Contact us on Below options</h2>
+  <h2>Contact us on the options below:</h2>
 
   <div class="contact-info">
     <p>Whatsapp: <a href="https://wa.me/+919408144250">9408144250</a></p>
