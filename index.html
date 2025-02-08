@@ -29,16 +29,39 @@
     }
 
     a {
-      color: #3498db;
+      display: inline-block;
+      background-color: #87CEFA;
+      color: white;
+      padding: 12px 25px;
       text-decoration: none;
-      font-weight: bold;
+      border-radius: 10px;
       font-size: 4vw;
-      display: block;
-      margin: 10px 0;
+      margin: 10px 5px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     a:hover {
-      color: #2980b9;
+      background-color: #5dade2;
+      transform: scale(1.05);
+    }
+
+    .download-button {
+      display: inline-block;
+      background-color: #FFF8DC;
+      color: #333;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 4vw;
+      margin: 10px 5px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .download-button:hover {
+      background-color: #F5DEB3;
+      transform: scale(1.05);
     }
 
     .contact-info p {
@@ -55,17 +78,6 @@
       margin: 15px 0;
     }
 
-    .download-button {
-      display: inline-block;
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
-      font-size: 4vw;
-      margin: 20px 0;
-    }
-
     hr {
       width: 80%;
       border-top: 1px solid #34495e;
@@ -76,8 +88,9 @@
       h1, h2 {
         font-size: 6vw;
       }
-      .contact-info p, a {
+      .contact-info p, a, .download-button {
         font-size: 5vw;
+        padding: 15px 30px;
       }
       .color-box {
         padding: 10px;
