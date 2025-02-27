@@ -15,17 +15,17 @@
 
     .color-box {
       background: rgba(255, 204, 128, 0.7);
-      padding: 20px;
-      border-radius: 15px;
-      font-size: 4vw;
-      margin: 30px auto;
-      width: 80%;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 6vw;
+      margin: 15px auto;
+      width: 90%;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
 
     h1, h2 {
-      font-size: 4vw;
-      margin: 20px 0;
+      font-size: 6vw;
+      margin: 10px 0;
       color: #2c3e50;
     }
 
@@ -33,14 +33,14 @@
       display: block;
       background-color: #007BFF;
       color: white;
-      padding: 15px 30px;
+      padding: 10px;
       text-decoration: none;
-      border-radius: 12px;
-      font-size: 3.5vw;
-      margin: 10px auto;
+      border-radius: 6px;
+      font-size: 4vw;
+      margin: 8px auto;
       width: 80%;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
     }
 
     a:hover {
@@ -48,44 +48,52 @@
       transform: scale(1.05);
     }
 
-    .download-button {
-      display: block;
-      background-color: #FFE4B5;
-      color: #333;
-      padding: 15px 30px;
-      text-decoration: none;
-      border-radius: 12px;
-      font-size: 3.5vw;
-      margin: 10px auto;
+    .contact-info {
+      position: relative;
+      margin-bottom: 15px;
+    }
+
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
       width: 80%;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      z-index: 10;
+      opacity: 0;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .submenu.show {
+      display: block;
+      opacity: 1;
+      transform: translateX(-50%) translateY(5px);
+    }
+
+    .submenu a {
+      width: 85%;
+      font-size: 4vw;
+      margin: 8px auto;
+      background-color: #28a745;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
-    .download-button:hover {
-      background-color: #FFD700;
-      transform: scale(1.05);
-    }
-
-    .contact-info p {
-      font-size: 3.5vw;
-      margin: 10px 0;
-      color: #34495e;
+    .submenu a:hover {
+      background-color: #218838;
     }
 
     .image-container img {
       width: 90%;
-      max-width: 450px;
+      max-width: 350px;
       height: auto;
-      border-radius: 12px;
-      margin: 20px 0;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    hr {
-      width: 80%;
-      border-top: 2px solid #34495e;
-      margin: 30px auto;
+      margin: 15px auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
   </style>
 </head>
@@ -97,22 +105,19 @@
   <h2>Contact me using the options below:</h2>
 
   <div class="contact-info">
-    <a href="https://wa.me/+919408144250">WhatsApp: 9408144250</a>
-    <a href="https://www.facebook.com/jaimin.parmar.7393">Facebook: JAIMIN PARMAR</a>
-    <a href="https://www.instagram.com/jaiminparmarofficial/">Instagram: @jaiminparmarofficial</a>
-    <a href="mailto:jaiminparmar024@gmail.com">Email: jaiminparmar024@gmail.com</a>
-    <a href="https://www.linkedin.com/in/jaimin-parmar-495382315">LinkedIn: JAIMIN PARMAR</a>
+    <a href="#" onclick="toggleSubmenu(event)">Contact Options</a>
+    <div class="submenu" id="submenu">
+      <a href="https://wa.me/+919408144250">WhatsApp</a>
+      <a href="https://www.facebook.com/jaimin.parmar.7393">Facebook</a>
+      <a href="https://www.instagram.com/jaiminparmarofficial/">Instagram</a>
+      <a href="mailto:jaiminparmar024@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/jaimin-parmar-495382315">LinkedIn</a>
+    </div>
   </div>
-
-  <a href="https://drive.google.com/drive/folders/1bgZJG0-JPyLpvZ4rqKJPC4UusRm7Kf06?usp=drive_link" download class="download-button">Download the App</a>
-
-  <hr>
 
   <div class="image-container">
     <img src="https://i.postimg.cc/7hxJNDNc/IMG-20250120-160943-1.jpg" alt="Jaimin Parmar" loading="lazy">
   </div>
-
-  <hr>
 
   <div class="image-container">
     <img src="https://t3.ftcdn.net/jpg/05/56/29/10/360_F_556291020_q2ieMiOCKYbtoLITrnt7qcSL1LJYyWrU.jpg" alt="Thank You" loading="lazy">
@@ -120,5 +125,19 @@
 
   <h1>Thank you for visiting my website!</h1>
 
+  <script>
+    function toggleSubmenu(event) {
+      event.preventDefault();
+      let submenu = document.getElementById("submenu");
+      if (submenu.classList.contains("show")) {
+        submenu.classList.remove("show");
+      } else {
+        submenu.classList.add("show");
+        setTimeout(() => {
+          submenu.classList.remove("show");
+        }, 5000);
+      }
+    }
+  </script>
 </body>
 </html>
