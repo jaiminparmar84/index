@@ -4,13 +4,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Jaimin Parmar</title>
   <style>
+    :root {
+      --background-color: linear-gradient(to right, #ece9e6, #ffffff);
+      --text-color: #333;
+      --box-background: rgba(255, 204, 128, 0.7);
+      --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      --link-background: #007BFF;
+      --link-hover-background: #0056b3;
+      --contact-background: #fffacd;
+      --contact-text-color: #333;
+      --submenu-background: white;
+      --submenu-link-background: #0084ff;
+      --submenu-link-hover-background: #0056b3;
+      --hr-color: #ccc;
+      --menu-background: rgba(255, 255, 255, 0.9);
+      --menu-text-color: #333;
+    }
+
+    [data-theme="dark"] {
+      --background-color: linear-gradient(to right, #2c3e50, #34495e);
+      --text-color: #ffffff;
+      --box-background: rgba(0, 0, 0, 0.7);
+      --box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
+      --link-background: #34495e;
+      --link-hover-background: #2c3e50;
+      --contact-background: #555;
+      --contact-text-color: #ffffff;
+      --submenu-background: #444;
+      --submenu-link-background: #555;
+      --submenu-link-hover-background: #2c3e50;
+      --hr-color: #777;
+      --menu-background: rgba(0, 0, 0, 0.9);
+      --menu-text-color: #ffffff;
+    }
+
     body {
-      background: linear-gradient(to right, #ece9e6, #ffffff);
+      background: var(--background-color);
       margin: 0;
       padding: 0;
       text-align: center;
       font-family: 'Poppins', sans-serif;
-      color: #333;
+      color: var(--text-color);
       animation: fadeIn 1.5s ease-in;
     }
 
@@ -20,13 +54,13 @@
     }
 
     .color-box {
-      background: rgba(255, 204, 128, 0.7);
+      background: var(--box-background);
       padding: 10px;
       border-radius: 10px;
       font-size: 6vw;
       margin: 15px auto;
       width: 90%;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      box-shadow: var(--box-shadow);
       animation: slideIn 1s ease-out;
     }
 
@@ -38,13 +72,13 @@
     h1, h2 {
       font-size: 6vw;
       margin: 10px 0;
-      color: #2c3e50;
+      color: var(--text-color);
       animation: fadeIn 2s ease-in;
     }
 
     a {
       display: block;
-      background-color: #007BFF;
+      background-color: var(--link-background);
       color: white;
       padding: 10px;
       text-decoration: none;
@@ -63,7 +97,7 @@
     }
 
     a:hover {
-      background-color: #0056b3;
+      background-color: var(--link-hover-background);
       transform: scale(1.05);
     }
 
@@ -73,8 +107,8 @@
     }
 
     .contact-info a {
-      background-color: #fffacd;
-      color: #333;
+      background-color: var(--contact-background);
+      color: var(--contact-text-color);
     }
 
     .submenu {
@@ -84,7 +118,7 @@
       left: 50%;
       transform: translateX(-50%);
       width: 80%;
-      background: white;
+      background: var(--submenu-background);
       overflow: hidden;
       z-index: 10;
       opacity: 0;
@@ -104,7 +138,7 @@
       width: 85%;
       font-size: 4vw;
       margin: 8px auto;
-      background-color: #0084ff;
+      background-color: var(--submenu-link-background);
       color: white;
       border: none;
       transition: all 0.3s ease;
@@ -114,7 +148,7 @@
     }
 
     .submenu a:hover {
-      background-color: #0056b3;
+      background-color: var(--submenu-link-hover-background);
     }
 
     .image-container img {
@@ -134,12 +168,89 @@
 
     hr {
       width: 90%;
-      border: 1px solid #ccc;
+      border: 1px solid var(--hr-color);
       margin: 20px auto;
+    }
+
+    /* Hamburger Menu Styles */
+    .hamburger-menu {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+      z-index: 1000;
+      background-color: var(--menu-background);
+      padding: 10px;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .hamburger-menu .line {
+      width: 25px;
+      height: 3px;
+      background-color: var(--text-color);
+      margin: 5px 0;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger-menu.open .line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger-menu.open .line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger-menu.open .line:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .menu {
+      display: none;
+      position: fixed;
+      top: 70px;
+      right: 20px;
+      background-color: var(--menu-background);
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      padding: 10px;
+      z-index: 1000;
+    }
+
+    .menu.show {
+      display: block;
+      animation: fadeIn 0.3s ease-in;
+    }
+
+    .menu a {
+      display: block;
+      color: var(--menu-text-color);
+      padding: 10px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+      border-radius: 6px;
+    }
+
+    .menu a:hover {
+      background-color: var(--submenu-link-background);
+      color: white;
     }
   </style>
 </head>
 <body>
+  <!-- Hamburger Menu -->
+  <div class="hamburger-menu" onclick="toggleMenu()">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+
+  <!-- Menu -->
+  <div class="menu" id="menu">
+    <a href="#" onclick="toggleTheme()" id="theme-toggle">DARK MODE</a>
+  </div>
+
   <div class="color-box">
     <h1>Welcome to My Website</h1>
   </div>
@@ -179,6 +290,25 @@
           submenu.classList.remove("show");
         }, 5000);
       }
+    }
+
+    function toggleTheme() {
+      const body = document.body;
+      const themeToggle = document.getElementById("theme-toggle");
+      if (body.getAttribute("data-theme") === "dark") {
+        body.setAttribute("data-theme", "light");
+        themeToggle.textContent = "DARK MODE";
+      } else {
+        body.setAttribute("data-theme", "dark");
+        themeToggle.textContent = "LIGHT MODE";
+      }
+    }
+
+    function toggleMenu() {
+      const hamburgerMenu = document.querySelector(".hamburger-menu");
+      const menu = document.getElementById("menu");
+      hamburgerMenu.classList.toggle("open");
+      menu.classList.toggle("show");
     }
   </script>
 </body>
