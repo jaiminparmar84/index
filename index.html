@@ -19,21 +19,6 @@
       --hr-color: #ccc;
     }
     
-    [data-theme="dark"] {
-      --background-color: linear-gradient(to right, #2c3e50, #34495e);
-      --text-color: #ffffff;
-      --box-background: rgba(0, 0, 0, 0.7);
-      --box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
-      --link-background: #34495e;
-      --link-hover-background: #2c3e50;
-      --contact-background: #555;
-      --contact-text-color: #ffffff;
-      --submenu-background: #444;
-      --submenu-link-background: #555;
-      --submenu-link-hover-background: #2c3e50;
-      --hr-color: #777;
-    }
-    
     body {
       background: var(--background-color);
       margin: 0;
@@ -194,6 +179,13 @@
   
   <div class="image-container">
     <img src="https://i.postimg.cc/7hxJNDNc/IMG-20250120-160943-1.jpg" alt="Jaimin Parmar" loading="lazy">
+    <center>
+      <img src="https://i.postimg.cc/qBstbj6R/Whats-App-Image-2025-02-27-at-11-13-01-PM.jpg" alt="Jaimin Parmar" loading="lazy">
+    </center>
+
+    <center>
+      <img src="https://i.postimg.cc/nVGzYrN9/Whats-App-Image-2025-02-27-at-11-13-01-PM-1.jpg" alt="Jaimin Parmar" loading="lazy">
+    </center>
   </div>
   
   <h1>Thank you for visiting my website.</h1>
@@ -209,18 +201,6 @@
         setTimeout(() => {
           submenu.classList.remove("show");
         }, 5000);
-      }
-    }
-  
-    function toggleTheme() {
-      const body = document.body;
-      const themeToggle = document.getElementById("theme-toggle");
-      if (body.getAttribute("data-theme") === "dark") {
-        body.setAttribute("data-theme", "light");
-        themeToggle.textContent = "DARK MODE";
-      } else {
-        body.setAttribute("data-theme", "dark");
-        themeToggle.textContent = "LIGHT MODE";
       }
     }
   </script>
