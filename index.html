@@ -11,6 +11,12 @@
       text-align: center;
       font-family: 'Poppins', sans-serif;
       color: #333;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     .color-box {
@@ -21,12 +27,19 @@
       margin: 15px auto;
       width: 90%;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      animation: slideIn 1s ease-out;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
     h1, h2 {
       font-size: 6vw;
       margin: 10px 0;
       color: #2c3e50;
+      animation: fadeIn 2s ease-in;
     }
 
     a {
@@ -41,6 +54,12 @@
       width: 80%;
       transition: all 0.3s ease;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+      animation: fadeInUp 1s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
     a:hover {
@@ -54,7 +73,7 @@
     }
 
     .contact-info a {
-      background-color: #fffacd; /* Light Yellow */
+      background-color: #fffacd;
       color: #333;
     }
 
@@ -76,19 +95,22 @@
       display: block;
       opacity: 1;
       transform: translateX(-50%) translateY(5px);
+      animation: fadeIn 0.5s ease-in;
     }
 
     .submenu a {
       width: 85%;
       font-size: 4vw;
       margin: 8px auto;
-      background-color: #0084ff;
+      background-color: transparent;
       color: white;
+      border: 2px solid white;
       transition: all 0.3s ease;
+      animation: slideIn 0.8s ease-in;
     }
 
     .submenu a:hover {
-      background-color: #0084ff;
+      background-color: rgba(255, 255, 255, 0.2);
     }
 
     .image-container img {
@@ -98,6 +120,12 @@
       margin: 15px auto;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      animation: fadeInZoom 1.5s ease-in;
+    }
+
+    @keyframes fadeInZoom {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
     }
 
     hr {
