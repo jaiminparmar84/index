@@ -192,17 +192,23 @@
   <script>
     function toggleSubmenu(event) {
       event.preventDefault();
-      event.stopPropagation(); // Button click ke baad event bubble na ho
+      event.stopPropagation(); // Click event bubbling rokne ke liye
       const submenu = document.getElementById("submenu");
       submenu.classList.toggle("show");
     }
     
-    // Agar user site ke kisi aur hissa par click karta hai toh submenu hide ho jayega
+    // Agar user site ke kisi dusre hissa par click kare, toh submenu hide ho jayega
     document.addEventListener("click", function(event) {
       const submenu = document.getElementById("submenu");
       if (!event.target.closest(".contact-info")) {
         submenu.classList.remove("show");
       }
+    });
+    
+    // Agar user page ko scroll karta hai, toh bhi submenu automatically hide ho jayega
+    window.addEventListener("scroll", function() {
+      const submenu = document.getElementById("submenu");
+      submenu.classList.remove("show");
     });
   </script>
 </body>
