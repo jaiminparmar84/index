@@ -17,6 +17,8 @@
       --submenu-link-background: #0084ff;
       --submenu-link-hover-background: #0056b3;
       --hr-color: #ccc;
+      --button-background: #28a745;
+      --button-hover-background: #218838;
     }
     
     body {
@@ -45,11 +47,6 @@
       animation: slideIn 1s ease-out;
     }
     
-    @keyframes slideIn {
-      from { transform: translateY(-50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-    
     h1, h2 {
       font-size: 6vw;
       margin: 10px 0;
@@ -57,7 +54,7 @@
       animation: fadeIn 2s ease-in;
     }
     
-    a {
+    a, .website-button {
       display: block;
       background-color: var(--link-background);
       color: white;
@@ -70,6 +67,8 @@
       transition: all 0.3s ease;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
       animation: fadeInUp 1s ease-out;
+      cursor: pointer;
+      border: none;
     }
     
     @keyframes fadeInUp {
@@ -77,19 +76,25 @@
       to { transform: translateY(0); opacity: 1; }
     }
     
-    a:hover {
+    a:hover, .website-button:hover {
       background-color: var(--link-hover-background);
       transform: scale(1.05);
     }
-    
+
+    .website-button {
+      background-color: var(--button-background);
+      font-size: 5vw;
+      padding: 12px;
+      font-weight: bold;
+    }
+
+    .website-button:hover {
+      background-color: var(--button-hover-background);
+    }
+
     .contact-info {
       position: relative;
       margin-bottom: 15px;
-    }
-    
-    .contact-info a {
-      background-color: var(--contact-background);
-      color: var(--contact-text-color);
     }
     
     .submenu {
@@ -113,23 +118,6 @@
       opacity: 1;
       transform: translateX(-50%) translateY(5px);
       animation: fadeIn 0.5s ease-in;
-    }
-    
-    .submenu a {
-      width: 85%;
-      font-size: 4vw;
-      margin: 8px auto;
-      background-color: var(--submenu-link-background);
-      color: white;
-      border: none;
-      transition: all 0.3s ease;
-      animation: slideIn 0.8s ease-in;
-      padding: 10px;
-      border-radius: 6px;
-    }
-    
-    .submenu a:hover {
-      background-color: var(--submenu-link-hover-background);
     }
     
     .image-container img {
@@ -170,7 +158,6 @@
     </div>
   </div>
   
-  <!-- Swapped the images here -->
   <div class="image-container">
     <img src="https://t3.ftcdn.net/jpg/05/56/29/10/360_F_556291020_q2ieMiOCKYbtoLITrnt7qcSL1LJYyWrU.jpg" alt="Thank You" loading="lazy">
   </div>
@@ -188,16 +175,18 @@
   </div>
   
   <h1>Thank you for visiting my website.</h1>
-  
+
+  <!-- New Button to Open Website -->
+  <button class="website-button" onclick="openWebsite()">Open My Website</button>
+
   <script>
     function toggleSubmenu(event) {
       event.preventDefault();
-      event.stopPropagation(); // Click event bubbling rokne ke liye
+      event.stopPropagation();
       const submenu = document.getElementById("submenu");
       submenu.classList.toggle("show");
     }
     
-    // Agar user site ke kisi dusre hissa par click kare, toh submenu hide ho jayega
     document.addEventListener("click", function(event) {
       const submenu = document.getElementById("submenu");
       if (!event.target.closest(".contact-info")) {
@@ -205,11 +194,14 @@
       }
     });
     
-    // Agar user page ko scroll karta hai, toh bhi submenu automatically hide ho jayega
     window.addEventListener("scroll", function() {
       const submenu = document.getElementById("submenu");
       submenu.classList.remove("show");
     });
+
+    function openWebsite() {
+      window.open("https://jaiminparmar84.github.io/secondwebsite/", "_blank");
+    }
   </script>
 </body>
 </html>
